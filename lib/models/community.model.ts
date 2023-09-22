@@ -16,23 +16,25 @@ const communitySchema = new mongoose.Schema({
   },
   image: String,
   bio: String,
-  createdBy:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"User"
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   },
   threads: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Thread",
-    }
+    },
   ],
- 
-  members:[{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"User"
-  }]
+  members: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
-const Community = mongoose.models.Community|| mongoose.model("Community", communitySchema);
+const Community =
+  mongoose.models.Community || mongoose.model("Community", communitySchema);
 
 export default Community;

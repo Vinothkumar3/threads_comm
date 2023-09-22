@@ -1,8 +1,17 @@
-import * as Z from 'zod';
-export const UserValidation=Z.object({
-    profile_photo:Z.string().url().nonempty(),
-    name: Z.string().min(3).max(30),
-    username: Z.string().min(3).max(30),
-    bio: Z.string().min(3).max(1000),
+import * as z from "zod";
 
-})
+export const UserValidation = z.object({
+  profile_photo: z.string().url().nonempty(),
+  name: z
+    .string()
+    .min(3, { message: "Minimum 3 characters." })
+    .max(30, { message: "Maximum 30 caracters." }),
+  username: z
+    .string()
+    .min(3, { message: "Minimum 3 characters." })
+    .max(30, { message: "Maximum 30 caracters." }),
+  bio: z
+    .string()
+    .min(3, { message: "Minimum 3 characters." })
+    .max(1000, { message: "Maximum 1000 caracters." }),
+});
