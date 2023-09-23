@@ -8,17 +8,17 @@ so this thread-comm app similer to Threads app is also clone of threads
 
 this project bulid technology and tools:
 
-Master Next.js 13.4 with Server Side Rendering and Typescript
-Learn MongoDB handling of complex schemas, multiple data population
-Create beautiful layouts with TailwindCSS
-Use Clerk for authentication
-Handle file uploads with UploadThing
-Explore Shadcn components
-Listen to real-time events with webhooks
-Understand middleware, API actions, and authorization
-Explore & integrate new Next.js layout route groups
-Validate data with Zod
-Manage forms with react hook form
-Create reusable components
-Build a solid application architecture
+Master Next.js 13.4 with Server Side Rendering and Typescript.
+Learn MongoDB handling of complex schemas, multiple data population.
+Create beautiful layouts with TailwindCSS.
+Use Clerk for authentication.
+Handle file uploads with UploadThing.
+Explore Shadcn components.
+Listen to real-time events with webhooks.
+Understand middleware, API actions, and authorization.
+Explore & integrate new Next.js layout route groups.
+Validate data with Zod.
+Manage forms with react hook form.
+Create reusable components.
+Build a solid application architecture.
 Deploy the application and more!
