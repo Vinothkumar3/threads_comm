@@ -1,5 +1,5 @@
 
-threada_comm is Full Stack MERN Next.js 13 responsive Threads App | React, Next JS, TypeScript, MongoDB
+Threads_comm is Full Stack MERN Next.js 13 responsive Threads App | React, Next JS, TypeScript, MongoDB
 
 ![Threads](https://github.com/Vinothkumar3/threads_comm/assets/63175218/9f0b59dd-fbb3-4c9d-93cc-0cc59fa63ba2)
 
