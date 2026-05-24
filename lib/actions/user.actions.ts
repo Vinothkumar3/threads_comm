@@ -62,14 +62,21 @@ export async function updateUser({
   }
 }
 
-export async function fetchUserPosts(userId: string) {
+export async function fetchUserPosts(userId: string, pageNumber = 1, pageSize = 20) {
   try {
     connectToDB();
+
+    const skipAmount = (pageNumber - 1) * pageSize;
 
     // Find all threads authored by the user with the given userId
     const threads = await User.findOne({ id: userId }).populate({
       path: "threads",
       model: Thread,
+      options: {
+        sort: { createdAt: "desc" },
+        skip: skipAmount,
+        limit: pageSize,
+      },
       populate: [
         {
           path: "community",
