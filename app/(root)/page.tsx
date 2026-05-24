@@ -1,10 +1,9 @@
-"use client";
-
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 import ThreadCard from "@/components/cards/ThreadCard";
 import Pagination from "@/components/shared/Pagination";
+import { Loading } from "@/components/shared/Loading";
 
 import { fetchPosts } from "@/lib/actions/thread.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
@@ -34,6 +33,7 @@ async function Home({
           <p className='no-result'>No threads found</p>
         ) : (
           <>
+           <Suspense fallback={<Loading/>}>
             {result.posts.map((post) => (
               <ThreadCard
                 key={post._id}
@@ -47,6 +47,7 @@ async function Home({
                 comments={post.children}
               />
             ))}
+           </Suspense >
           </>
         )}
       </section>
