@@ -1,4 +1,3 @@
- 
 "use server";
 
 import { revalidatePath } from "next/cache";
@@ -50,18 +49,14 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
 }
 
 interface Params {
-  text: string;
-  author: string;
-  communityId: string | null;
-  path: string;
+  text: string,
+  author: string,
+  communityId: string | null,
+  path: string,
 }
 
-export async function createThread({
-  text,
-  author,
-  communityId,
-  path,
-}: Params) {
+export async function createThread({ text, author, communityId, path }: Params
+) {
   try {
     await connectToDB();
 
@@ -183,7 +178,7 @@ export async function fetchThreadById(threadId: string) {
           {
             path: "author", // Populate the author field within children
             model: User,
-            select: "_id id name image", // Select only _id and username fields of the author
+            select: "_id id name parentId image", // Select only _id and username fields of the author
           },
           {
             path: "children", // Populate the children field within children
@@ -191,7 +186,7 @@ export async function fetchThreadById(threadId: string) {
             populate: {
               path: "author", // Populate the author field within nested children
               model: User,
-              select: "_id id name image", // Select only _id and username fields of the author
+              select: "_id id name parentId image", // Select only _id and username fields of the author
             },
           },
         ],
