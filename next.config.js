@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript:{
-   ignoreBuildErrors:true,
+   ignoreBuildErrors:false,
   },
-  serverExternalPackages: ["mongoose", "encoding"],
+  experimental: {
+    serverComponentsExternalPackages: ["mongoose", "encoding"],
+  },
   images: {
     remotePatterns: [
       {
