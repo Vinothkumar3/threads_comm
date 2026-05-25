@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.2.2",
-    "@clerk/themes": "^1.7.5",
+    "@clerk/nextjs": "^5.2.3",
+    "@clerk/themes": "^2.1.10",
     "@hookform/resolvers": "^3.3.1",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-menubar": "^1.0.4",
@@ -23,7 +23,7 @@
     "clsx": "^2.0.0",
     "lucide-react": "^0.274.0",
     "mongoose": "^7.5.2",
-    "next": "14.2.4",
+    "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.46.1",
@@ -36,13 +36,13 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.21",
     "autoprefixer": "^10",
-    "eslint": "^8.0.0",
-    "eslint-config-next": "14.2.4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3",
     "typescript": "5.2.2",
     "uploadthing": "^5.5.1",
-    "zod": "^3.22.2"
+    "zod": "^3.23.8"
   },
   "engines": {
     "node": "20.x"
