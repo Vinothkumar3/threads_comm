@@ -18,7 +18,7 @@ async function connectToDB() {
 
   try {
     console.log("Creating new MongoDB connection");
-    const db = await mongoose.connect(MONGODB_URL, {
+    const db = await mongoose.connect(MONGODB_URL!, {
       dbName: "threads",
       bufferCommands: false,
     });
