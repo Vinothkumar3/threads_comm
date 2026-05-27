@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
-// Vercel Mongoose connection logic: v2 - Check for this log after deployment.
-
 const MONGODB_URL = process.env.MONGODB_URL;
+
+// DIAGNOSTIC LOG: Check if the env variable is loaded.
+console.log("Vercel is attempting to connect with MONGODB_URL starting with:", MONGODB_URL?.substring(0, 25));
 
 if (!MONGODB_URL) {
   throw new Error(
@@ -10,11 +11,6 @@ if (!MONGODB_URL) {
   );
 }
 
-/**
- * Global is used here to maintain a cached connection across hot reloads
- * in development. This prevents connections growing exponentially
- * during API Route usage.
- */
 let cached = (global as any).mongoose;
 
 if (!cached) {
@@ -23,12 +19,10 @@ if (!cached) {
 
 async function connectToDB() {
   if (cached.conn) {
-    // If a cached connection exists, return it.
     return cached.conn;
   }
 
   if (!cached.promise) {
-    // If no connection promise is cached, create a new one.
     const opts = {
       bufferCommands: false,
       dbName: "threads",
@@ -38,16 +32,7 @@ async function connectToDB() {
       return mongoose;
     });
   }
-
-  try {
-    // Await the connection promise. If it fails, the promise will be nullified
-    // allowing a retry on the next request.
-    cached.conn = await cached.promise;
-  } catch (e) {
-    cached.promise = null;
-    throw e;
-  }
-
+  cached.conn = await cached.promise;
   return cached.conn;
 }
 
